@@ -25,6 +25,11 @@
 			a {
 				color: red;
 			}
+			#figureList {
+				max-width: 500px;
+				max-height: 400px;
+				overflow-y: scroll;
+			}
 		</style>
 	</head>
 
@@ -65,7 +70,7 @@
 
 				var selectedObject = scene.getObjectByName(uuid);
 				scene.remove( selectedObject );
-				animate();
+				render();
 			}
 			function onCreateFigureClick() {
 				switch (figureSelect.value) {
@@ -91,14 +96,14 @@
 					
 
 					figure.position.x = Math.random() * 1600 - 800;
-					figure.position.y = 0;
+					figure.position.y = 0
 					figure.position.z = Math.random() * 1600 - 800;
 					figure.scale.set(scale, scale, scale)
 					figure.name = figure.uuid
 					figure.updateMatrix();
 					figure.matrixAutoUpdate = false;
 					scene.add( figure );
-					animate()
+					render()
 				}
 
 				function renderPyramid() {
