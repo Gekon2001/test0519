@@ -59,8 +59,10 @@
 			var figureList = document.getElementById('figureList')
 
 			function onRemoveFigureClick(uuid) {
-				removedLi = document.getElementById('uuid')
+				removedLi = document.getElementById(uuid)
+				console.log(removedLi)
 				figureList.removeChild(removedLi)
+
 				var selectedObject = scene.getObjectByName(uuid);
 				scene.remove( selectedObject );
 				animate();
